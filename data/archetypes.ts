@@ -22,7 +22,7 @@ export const archetypes: Archetype[] = [
       observation: 5,
       influence: 7,
     },
-    accent: "from-emerald-400 via-teal-400 to-lime-300",
+    accent: "from-[#c9a7ff] via-[#ff97be] to-[#ffe347]",
   },
   {
     id: "center-star",
@@ -45,7 +45,7 @@ export const archetypes: Archetype[] = [
       observation: 3,
       influence: 6,
     },
-    accent: "from-yellow-300 via-orange-400 to-red-500",
+    accent: "from-[#ffe347] via-[#ff8a00] to-[#ff5fa2]",
   },
   {
     id: "rhythm-planner",
@@ -68,7 +68,7 @@ export const archetypes: Archetype[] = [
       observation: 8,
       influence: 8,
     },
-    accent: "from-cyan-400 via-sky-500 to-indigo-500",
+    accent: "from-[#fff8ff] via-[#c9a7ff] to-[#ff5fa2]",
   },
   {
     id: "color-spark",
@@ -91,7 +91,7 @@ export const archetypes: Archetype[] = [
       observation: 3,
       influence: 5,
     },
-    accent: "from-fuchsia-500 via-violet-500 to-sky-400",
+    accent: "from-[#ff5fa2] via-[#c9a7ff] to-[#fff8ff]",
   },
   {
     id: "faithful-believer",
@@ -114,7 +114,7 @@ export const archetypes: Archetype[] = [
       observation: 5,
       influence: 6,
     },
-    accent: "from-pink-400 via-rose-400 to-red-400",
+    accent: "from-[#ff97be] via-[#ff5fa2] to-[#ff8a00]",
   },
   {
     id: "fate-challenger",
@@ -137,7 +137,7 @@ export const archetypes: Archetype[] = [
       observation: 5,
       influence: 5,
     },
-    accent: "from-rose-500 via-orange-400 to-amber-300",
+    accent: "from-[#ff5fa2] via-[#ff8a00] to-[#ffe347]",
   },
   {
     id: "shadow-watcher",
@@ -160,7 +160,7 @@ export const archetypes: Archetype[] = [
       observation: 10,
       influence: 5,
     },
-    accent: "from-slate-300 via-zinc-400 to-stone-500",
+    accent: "from-[#fff8ff] via-[#d9c4ff] to-[#ff97be]",
   },
   {
     id: "day-current",
@@ -183,6 +183,6 @@ export const archetypes: Archetype[] = [
       observation: 7,
       influence: 10,
     },
-    accent: "from-amber-200 via-lime-300 to-emerald-400",
+    accent: "from-[#ffe347] via-[#ff97be] to-[#c9a7ff]",
   },
 ];

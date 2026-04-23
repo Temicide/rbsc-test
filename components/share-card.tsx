@@ -35,15 +35,15 @@ export function ShareCard({ archetype }: ShareCardProps) {
         <div>
           <div
             aria-hidden="true"
-            className="mb-4 flex size-20 items-center justify-center rounded-[1.5rem] border border-[#9b5a2e]/12 bg-[#fff7e8] text-5xl"
+            className="mb-4 flex size-20 items-center justify-center rounded-[1.5rem] border border-[#ff97be]/30 bg-[#fff1fa] text-5xl"
           >
             {archetypeEmoji}
           </div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#9b5a2e]">
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff5fa2]">
             🏇 สนามนี้ฉันคือ
           </p>
-          <h2 className="mt-3 text-4xl font-black leading-tight text-[#2b2118]">{archetype.name}</h2>
-          <p className="mt-4 text-base leading-8 text-[#6f5f4f]">“{archetype.catchphrase}”</p>
+          <h2 className="mt-3 text-4xl font-black leading-tight text-[#2a1530]">{archetype.name}</h2>
+          <p className="mt-4 text-base leading-8 text-[#6f4a73]">“{archetype.catchphrase}”</p>
         </div>
         <Button className="w-full gap-2" onClick={shareResult}>
           <Share2 size={18} />

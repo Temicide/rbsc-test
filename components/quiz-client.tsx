@@ -48,23 +48,23 @@ export function QuizClient() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-4 py-5 sm:px-6 lg:px-8">
       <div className="mb-8 flex items-center justify-between gap-4">
-        <Link className="text-sm font-black text-[#3b2a1f] transition hover:text-[#9b5a2e]" href="/">
+        <Link className="text-sm font-black text-[#2a1530] transition hover:text-[#ff5fa2]" href="/">
           🐎 สนามนี้คุณเป็นใคร
         </Link>
-        <span className="rounded-full border border-[#9b5a2e]/15 bg-white/70 px-3 py-1 text-xs font-bold text-[#6f5f4f]">
+        <span className="rounded-full border border-[#ff97be]/34 bg-white/78 px-3 py-1 text-xs font-bold text-[#6f4a73]">
           ข้อ {currentIndex + 1}/{quizQuestions.length}
         </span>
       </div>
 
-      <section className="relative flex flex-1 flex-col overflow-hidden rounded-[2rem] border border-[#9b5a2e]/14 bg-white/78 p-5 shadow-[0_22px_70px_rgba(116,78,43,0.12)] backdrop-blur-xl sm:p-7 lg:p-8">
+      <section className="relative flex flex-1 flex-col overflow-hidden rounded-[2rem] border border-[#ff97be]/30 bg-white/82 p-5 shadow-[0_22px_70px_rgba(255,95,162,0.12)] backdrop-blur-xl sm:p-7 lg:p-8">
         <div className="relative z-10 space-y-3">
-          <div className="flex items-center justify-between text-sm font-bold text-[#7c6f61]">
+          <div className="flex items-center justify-between text-sm font-bold text-[#7f5f92]">
             <span>🎟️ เลือกคำตอบที่ใช่สุด</span>
             <span>{answeredCount}/{quizQuestions.length}</span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-[#e8d3af]/50">
+          <div className="h-2 overflow-hidden rounded-full bg-[#ffe347]/34">
             <motion.div
-              className="h-full rounded-full bg-[#9b5a2e]"
+              className="h-full rounded-full bg-gradient-to-r from-[#ffe347] via-[#ff8a00] to-[#ff5fa2]"
               initial={false}
               transition={{ duration: 0.45, ease: [0.2, 0.8, 0.2, 1] }}
               animate={{ width: `${progress}%` }}
@@ -84,8 +84,8 @@ export function QuizClient() {
           >
             <div className="mx-auto w-full max-w-3xl">
               <div className="text-center">
-                <p className="text-sm font-black text-[#9b5a2e]">{currentQuestion.scene}</p>
-                <h1 className="mt-4 text-3xl font-black leading-tight text-[#2b2118] sm:text-4xl">
+                <p className="text-sm font-black text-[#ff5fa2]">{currentQuestion.scene}</p>
+                <h1 className="mt-4 text-3xl font-black leading-tight text-[#2a1530] sm:text-4xl">
                   {currentQuestion.prompt}
                 </h1>
               </div>
@@ -100,10 +100,10 @@ export function QuizClient() {
                       animate={{ opacity: 1, y: 0 }}
                       className={cn(
                         "group min-h-16 rounded-3xl border p-4 text-left transition duration-300",
-                        "focus:outline-none focus:ring-2 focus:ring-[#9b5a2e]",
+                        "focus:outline-none focus:ring-2 focus:ring-[#ff5fa2]",
                         isSelected
-                          ? "scale-[1.01] border-[#9b5a2e] bg-[#fff5e5] shadow-[0_14px_36px_rgba(155,90,46,0.12)]"
-                          : "border-[#9b5a2e]/12 bg-white/84 hover:-translate-y-0.5 hover:border-[#9b5a2e]/28 hover:bg-white",
+                          ? "scale-[1.01] border-[#ff5fa2] bg-[#fff1fa] shadow-[0_14px_36px_rgba(255,95,162,0.16)]"
+                          : "border-[#ff97be]/24 bg-white/86 hover:-translate-y-0.5 hover:border-[#ff97be]/46 hover:bg-[#fffafd]",
                       )}
                       initial={{ opacity: 0, y: 10 }}
                       onClick={() => selectAnswer(option.id)}
@@ -115,14 +115,14 @@ export function QuizClient() {
                           className={cn(
                             "flex size-9 shrink-0 items-center justify-center rounded-full border text-sm font-black transition",
                             isSelected
-                              ? "border-[#9b5a2e] bg-[#9b5a2e] text-white"
-                              : "border-[#9b5a2e]/20 text-[#7c6f61] group-hover:border-[#9b5a2e] group-hover:text-[#9b5a2e]",
+                              ? "border-[#ff5fa2] bg-[#ff5fa2] text-[#12020f]"
+                              : "border-[#ff97be]/36 text-[#7f5f92] group-hover:border-[#ff5fa2] group-hover:text-[#ff5fa2]",
                           )}
                         >
                           {isSelected ? <CheckCircle2 size={18} /> : option.id.toUpperCase()}
                         </span>
                         <span>
-                          <span className="block text-base font-black leading-7 text-[#2b2118]">
+                          <span className="block text-base font-black leading-7 text-[#2a1530]">
                             {option.label}
                           </span>
                         </span>

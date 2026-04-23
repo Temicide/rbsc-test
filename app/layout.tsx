@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "สนามนี้คุณเป็นใคร | Horse Track Archetype Quiz",
   description:
-    "แบบทดสอบสายบันเทิงสำหรับค้นหา archetype ของคุณในคอมมูนิตี้สนามม้า",
+    "แบบทดสอบสายบันเทิงสำหรับค้นหา archetype ของคุณในคอมมูนิตี้สาวม้า",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fffaf0",
+  themeColor: "#fffafd",
   width: "device-width",
   initialScale: 1,
 };
