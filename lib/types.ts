@@ -1,10 +1,12 @@
 export type TraitKey =
-  | "socialBoldness"
-  | "groupLoyalty"
-  | "chaosEnergy"
-  | "humorStyle"
-  | "fanEnergy"
-  | "observerInitiator";
+  | "social"
+  | "presence"
+  | "humor"
+  | "chaos"
+  | "passion"
+  | "drive"
+  | "observation"
+  | "influence";
 
 export type TraitScores = Record<TraitKey, number>;
 

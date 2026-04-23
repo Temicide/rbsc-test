@@ -6,16 +6,19 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ShareCard } from "@/components/share-card";
 import { getArchetypeEmoji } from "@/lib/archetype-emoji";
-import { decodeAnswers, getScoredResult, traitKeys } from "@/lib/scoring";
+import { decodeAnswers, getScoredResult, normalizeTraitScore, traitKeys } from "@/lib/scoring";
 import { cn } from "@/lib/utils";
+import type { TraitKey } from "@/lib/types";
 
-const traitLabels = {
-  socialBoldness: "ความกล้าเข้าสังคม",
-  groupLoyalty: "ดูแลแก๊ง",
-  chaosEnergy: "พลังความปั่น",
-  humorStyle: "ไหวพริบมุก",
-  fanEnergy: "แรงเชียร์",
-  observerInitiator: "โหมดเริ่มก่อน",
+const traitLabels: Record<TraitKey, string> = {
+  social: "ไมตรี",
+  presence: "พลังเด่น",
+  humor: "มุกไว",
+  chaos: "สีสัน",
+  passion: "ศรัทธา",
+  drive: "แรงฮึด",
+  observation: "สายตาอ่านเกม",
+  influence: "คุมกระแส",
 };
 
 export function ResultClient() {
@@ -132,7 +135,7 @@ export function ResultClient() {
             </summary>
             <div className="mt-4 grid gap-3">
               {traitKeys.map((key) => {
-                const value = Math.max(0, Math.min(100, (traitScores[key] + 6) * 8));
+                const value = normalizeTraitScore(key, traitScores[key]) * 10;
 
                 return (
                   <div key={key}>

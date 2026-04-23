@@ -59,14 +59,16 @@ npm run lint
 
 Each answer contributes weighted points to hidden community traits:
 
-- social boldness
-- friend-group loyalty
-- chaos energy
-- humor style
-- fan/idol energy
-- observer vs initiator energy
+- social
+- presence
+- humor
+- chaos
+- passion
+- drive
+- observation
+- influence
 
-When the quiz is completed, the app sums the selected answer weights into a trait profile. It then compares that profile with each archetype target profile using a deterministic distance calculation. The closest archetype wins. Ties are resolved consistently by Thai name sorting, so the same answers always produce the same result.
+When the quiz is completed, the app sums the selected answer weights into a trait profile, normalizes each trait against the current question set, and compares that profile with each archetype target profile using a deterministic distance calculation. The closest archetype wins. Ties are resolved consistently by Thai name sorting, so the same answers always produce the same result.
 
 Compatible friend-group matches are computed from the same trait profile plus each archetype's curated compatible archetype IDs. This keeps matches explainable and stable without making results feel random.
 

@@ -1,14 +1,14 @@
 import type { Archetype } from "@/lib/types";
 
 const archetypeEmojiById: Record<Archetype["id"], string> = {
-  "front-row-hype": "📣",
-  "quiet-oracle": "🔮",
-  "table-captain": "🧭",
-  "lucky-chaos": "🎲",
-  "meme-jockey": "😂",
-  "fanclub-flag": "🚩",
-  "snack-sponsor": "🍿",
-  "receipt-keeper": "🧾",
+  diplomat: "🤝",
+  "center-star": "⭐",
+  "rhythm-planner": "🧭",
+  "color-spark": "🎲",
+  "faithful-believer": "🚩",
+  "fate-challenger": "🏁",
+  "shadow-watcher": "🔎",
+  "day-current": "🌊",
 };
 
 export function getArchetypeEmoji(archetype: Archetype) {

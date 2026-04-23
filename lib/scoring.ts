@@ -3,22 +3,38 @@ import { quizQuestions } from "@/data/quiz";
 import type { AnswerMap, Archetype, ScoredResult, TraitKey, TraitScores } from "@/lib/types";
 
 export const traitKeys: TraitKey[] = [
-  "socialBoldness",
-  "groupLoyalty",
-  "chaosEnergy",
-  "humorStyle",
-  "fanEnergy",
-  "observerInitiator",
+  "social",
+  "presence",
+  "humor",
+  "chaos",
+  "passion",
+  "drive",
+  "observation",
+  "influence",
 ];
 
 export const emptyTraitScores = (): TraitScores => ({
-  socialBoldness: 0,
-  groupLoyalty: 0,
-  chaosEnergy: 0,
-  humorStyle: 0,
-  fanEnergy: 0,
-  observerInitiator: 0,
+  social: 0,
+  presence: 0,
+  humor: 0,
+  chaos: 0,
+  passion: 0,
+  drive: 0,
+  observation: 0,
+  influence: 0,
 });
+
+export function maxTraitScores(): TraitScores {
+  const maximums = emptyTraitScores();
+
+  for (const question of quizQuestions) {
+    for (const key of traitKeys) {
+      maximums[key] += Math.max(...question.options.map((option) => option.scores[key] ?? 0));
+    }
+  }
+
+  return maximums;
+}
 
 export function scoreAnswers(answers: AnswerMap): TraitScores {
   const totals = emptyTraitScores();
@@ -39,13 +55,21 @@ export function scoreAnswers(answers: AnswerMap): TraitScores {
   return totals;
 }
 
-function normalizeScore(value: number) {
-  return Math.max(0, Math.min(10, value + 4));
+const maximumTraitScores = maxTraitScores();
+
+export function normalizeTraitScore(key: TraitKey, value: number) {
+  const maximum = maximumTraitScores[key];
+
+  if (maximum <= 0) {
+    return 0;
+  }
+
+  return Math.max(0, Math.min(10, (value / maximum) * 10));
 }
 
 function distanceFromProfile(scores: TraitScores, archetype: Archetype) {
   return traitKeys.reduce((distance, key) => {
-    const normalized = normalizeScore(scores[key]);
+    const normalized = normalizeTraitScore(key, scores[key]);
     return distance + Math.abs(normalized - archetype.profile[key]);
   }, 0);
 }
@@ -65,8 +89,7 @@ export function getArchetype(scores: TraitScores) {
 function compatibilityScore(scores: TraitScores, candidate: Archetype, base: Archetype) {
   const profileDistance = distanceFromProfile(scores, candidate);
   const explicitMatchBonus = base.compatibleIds.includes(candidate.id) ? 8 : 0;
-  const complementBonus =
-    Math.abs(candidate.profile.chaosEnergy - base.profile.chaosEnergy) > 4 ? 2 : 0;
+  const complementBonus = Math.abs(candidate.profile.chaos - base.profile.chaos) > 4 ? 2 : 0;
 
   return explicitMatchBonus + complementBonus - profileDistance / 3;
 }
