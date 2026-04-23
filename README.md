@@ -34,6 +34,10 @@ Build for production:
 npm run build
 ```
 
+Deploy on Vercel with the Framework Preset set to **Next.js**. Do not override
+the Output Directory to `public`; this app uses Next's default `.next` build
+output, and `vercel.json` pins the deployment framework to Next.js.
+
 Run lint:
 
 ```bash
