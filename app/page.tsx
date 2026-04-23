@@ -7,8 +7,8 @@ export default function Home() {
   const previewArchetypes = archetypes.slice(0, 5);
   const quickFacts = [
     { Icon: Clock3, emoji: "⏱️", title: `${quizQuestions.length} ข้อ`, label: "อ่านไว" },
-    { Icon: Sparkles, emoji: "🏆", title: "ผลลัพธ์", label: "ไว้แซวเพื่อน" },
-    { Icon: Share2, emoji: "💬", title: "แชร์ได้", label: "จบในลิงก์เดียว" },
+    { Icon: Sparkles, emoji: "🏆", title: "ผลลัพธ์", label: "อาจจะตรงหรือไม่ตรง" },
+    { Icon: Share2, emoji: "💬", title: "แชร์ได้", label: "แต่แคปหน้าจอเหอะ 555" },
   ];
 
   return (
@@ -30,14 +30,14 @@ export default function Home() {
           <div className="motion-rise mx-auto max-w-3xl">
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#9b5a2e]/15 bg-white/70 px-4 py-2 text-sm font-black text-[#9b5a2e] shadow-[0_12px_30px_rgba(116,78,43,0.08)]">
               <Sparkles size={16} />
-              🏇 Quiz สนามม้าแบบเล่นเอาฮา
+              🏇 Quiz จากงานสาวม้าต่างๆ
             </p>
             <h1 className="text-5xl font-black leading-[1.02] text-[#2b2118] sm:text-7xl lg:text-8xl">
               คุณเป็นสายไหน
               <span className="block text-[#9b5a2e]">ในสนามม้า?</span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-[#6f5f4f]">
-              ตอบ {quizQuestions.length} ข้อสั้น ๆ แล้วรับ archetype ประจำแก๊งของคุณ
+              ตอบ {quizQuestions.length} ข้อสั้น ๆ แล้วทราบลักษณะนิสัยคุณ
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
